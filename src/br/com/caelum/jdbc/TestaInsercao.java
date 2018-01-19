@@ -17,12 +17,12 @@ public class TestaInsercao {
 		
 		String sql = "insert into Produto(nome, descricao) values(?, ?)";		
 		
-		try(Connection connection = Database.getConnection()){
+		try(Connection connection = new ConnectionPool().getConnection()){
 		connection.setAutoCommit(false);
 		try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){		
 		adiciona("Tv 55 polegadas", "full hd", statement);
 		adiciona("Bicicleta aro 16'", "banco em couro", statement);
-		adiciona("bluray", "bluray com 3 hdmi", statement);
+		adiciona("luray", "bluray com 3 hdmi", statement);
 		connection.commit();
 		}catch (Exception e) {
 			e.printStackTrace();

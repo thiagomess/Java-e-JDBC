@@ -12,7 +12,10 @@ public class TestaListagem {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
+		for (int i = 0; i < 100; i++) {
+			
+		
+		Connection connection = new ConnectionPool().getConnection();
 		Statement statement = connection.createStatement();
 		boolean resultado = statement.execute("select * from Produto");
 		ResultSet resultSet = statement.getResultSet();
@@ -30,6 +33,7 @@ public class TestaListagem {
 		
 		connection.close();
 		
+		i++;
+}
 	}
-
 }

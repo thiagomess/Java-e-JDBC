@@ -7,7 +7,10 @@ import java.sql.Statement;
 public class TestaRemocao {
 	
 	public static void main(String[] args) throws SQLException {
-		Connection connection = Database.getConnection();
+		
+		ConnectionPool database = new ConnectionPool();
+		
+		Connection connection = database.getConnection();
 		Statement statement = connection.createStatement();
 		boolean resultado = statement.execute("delete from Produto where id >3");
 		
