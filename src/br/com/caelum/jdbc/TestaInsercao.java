@@ -8,6 +8,11 @@ import java.sql.Statement;
 
 public class TestaInsercao {
 	
+/*	Isto é, a cada novo statement do tipo insert (update, delete e similares), o comando é comitado automaticamente para o servidor,
+	não dá para voltar atrás. Este é o comportamento padrão de uma Connection segundo a especificação do JDBC. Mas e se eu quiser executar
+	os dois inserts ou nada? Isto é, tudo ou nada. Ou executa os dois com sucesso ou nenhum. Nesse caso precisamos desativar o auto commit.
+			Para isso fazemos logo após receber a conexão:*/
+	
 	public static void main(String[] args) throws SQLException {
 		
 		String sql = "insert into Produto(nome, descricao) values(?, ?)";		
