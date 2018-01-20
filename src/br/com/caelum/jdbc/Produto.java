@@ -22,6 +22,11 @@ public class Produto {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + "]";
+	}
 	
 	
 	
