@@ -1,10 +1,10 @@
-package br.com.caelum.jdbc;
+package br.com.caelum.modelo;
 
 public class Produto {
 	
 	Integer id;
-	String nome;
-	String descricao;
+	public String nome;
+	public String descricao;
 	
 	public Produto(String nome, String descricao) {
 		this.nome = nome;

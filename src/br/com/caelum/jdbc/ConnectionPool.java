@@ -22,7 +22,7 @@ public class ConnectionPool {
 		
 	}
 
-	Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 		//Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
 		Connection connection = datasource.getConnection();
 		return connection;
